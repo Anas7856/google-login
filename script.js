@@ -15,19 +15,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (email) {
       displayEmail.textContent = email;
 
-      // Animate transition
-      step1.classList.add("slide-out");
-
-      setTimeout(() => {
-        step1.classList.add("hidden");
-        step2.classList.remove("hidden");
-
-        // Small delay before showing step2
-        setTimeout(() => {
-          step2.classList.add("slide-in");
-          passwordInput.focus();
-        }, 50);
-      }, 300);
+      // Remove animation classes for instant switch
+      step1.classList.add("hidden");
+      step2.classList.remove("hidden");
+      passwordInput.focus();
     } else {
       // Show validation message
       emailInput.style.borderColor = "#d93025";
